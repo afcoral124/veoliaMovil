@@ -35,3 +35,108 @@
 .barraSuperior .contenedorLogo .logo{
     width: 150px;
 }
+
+/*  Menú lateral --------------------------------- */
+.menu_lateral{
+    position: fixed;
+    width: 180px;
+    height: 100%;
+    background: #3c4043;
+    left: -200px;
+    transition: all 500ms linear;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu_lateral.active{
+    left: 0px;
+}
+/* Boton Equis para cerrar */
+.contenedorBotonCerrar{
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 5px;
+    color:rgb(207, 207, 207);
+    font-size: 20px;
+    
+}
+
+.contenedorBotonCerrar i{
+    transition: 0.3s ease all;
+    border-radius: 15px;
+}
+
+.contenedorBotonCerrar i:active{
+    background-color: rgba(223, 223, 223, 0.445);
+}
+
+
+
+/* Menu seccion usuario */
+.contenedorInformacionUsuario{
+    width: 100%;
+    border-bottom: 3px solid rgba(100, 100, 100, .3);
+}
+.contenedorInformacionUsuario i{
+    font-size: 110px;
+    color: rgb(214, 214, 214); 
+    margin-left: 35px;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+.contenedorInformacionUsuario .tituloMenu{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(214, 214, 214);
+}
+
+.contenedorInformacionUsuario .tituloUsuario{
+    font-size: 19px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(214, 214, 214);
+}
+
+/* Menu seccion opciones */
+
+.menuOpciones{
+    width:100%; 
+}
+
+.menuOpciones a{
+    width:100%;
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    color: rgba(230, 230, 230, .9);
+    border-bottom: 1px solid rgba(100, 100, 100, .3);
+}
+
+
+.menuOpciones a:active{
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+}
+
+
+.menuOpciones ul li .Texto{
+    width: 75%;
+    color: rgba(230, 230, 230, .9);
+    padding: 15px 0px;
+    text-align: left;
+    display: flex;
+    align-content: center;
+}
+
+.menuOpciones .Icono{
+    color: rgba(230, 230, 230, .9);
+    font-size: 20px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

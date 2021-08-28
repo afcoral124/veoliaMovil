@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Veolia Home</title>
-    <link rel="stylesheet" href="CSS/home.css">
-    <link rel="stylesheet" href="CSS/navegacion.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/navegacion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
@@ -19,17 +19,32 @@
     <div class="contenedorPrincipal">  
         
         <!-- -------------    Menu Navegación para todas las páginas -----------   -->
-        <div class="menu_lateral">
+        <div class="menu_lateral" id="menu_lateral">
+            <div class="contenedorBotonCerrar">
+                <p class="botonCerrar" ><i class="fa fa-close" id="botonCerrar"></i></p>
+            </div>
+            <div class="contenedorInformacionUsuario">
+                <p class="tituloMenu"> Menú de Opciones</p>
+                <p class="tituloUsuario">Usuario: Jaimito</p>
+                <i class="fa fa-user-circle-o"></i>
+            </div>
+            <div class="menuOpciones">
+                <ul>
+                    <li> <a href=""> <div class="Icono"><i class="fa fa-window-restore"></i></div> <div class="Texto">Consultar Tablas de Datos</div> </a> </li>
+                    <li> <a href=""> <div class="Icono"><i class="fa fa-vcard"></i></div> <div class="Texto">Información de Entidades</div></a> </li>
+                    <li> <a href=""> <div class="Icono"><i class="fa fa-power-off"></i></div> <div class="Texto">Cerrar Sesión</div></a> </li>
+                </ul>
+            </div>
             
         </div>
 
         <div class="barraSuperior">
 
-             <div class="btn_menu">
+             <div class="btn_menu" id="botonAbrir">
                 <i class="fa fa-bars"></i>        
             </div>
              <div class="contenedorLogo">
-                <img class="logo" src="assets/veolialogo1.png" alt="Imagen veolia">
+                <img class="logo" src="../assets/veolialogo1.png" alt="Imagen veolia">
             </div>
             
         </div>
@@ -38,23 +53,21 @@
          <div class="contenedorSecciones">  
             <a href="">
                 <div class="seccionesInternas">
-                    <img class="img1" alt="Consultar tablas" src="assets/tablas.png"> 
+                    <img class="img1" alt="Consultar tablas" src="../assets/imagen2.png"> 
                     <h4>Consultar tablas de datos</h4>
                 </div>
+                
             </a>
             <a href="">
                 <div class="seccionesInternas">
-                    <img class="img2" alt="Informacion de entidades" src="assets/entidad.png"> 
+                    <img class="img1" alt="Informacion de entidades" src="../assets/imagen1.png"> 
                     <h4>Información de entidades</h4>
                 </div>
-            </a>
-            
-        </div>   
-
-    
-                
+            </a> 
+        </div>            
     </div>
-   
+    
 
 </body>
+<script src="../js/navegacion.js" charset="utf-8"></script>
 </html>
