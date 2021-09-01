@@ -65,11 +65,14 @@ body{
     text-align: center;
 }
 
+
 .tabla{
-    overflow-x: scroll;    
+    overflow-x: scroll;     
+    
 }
 
 .tabla table{
+    
     color: white;
     background-color: rgb(33, 38, 44);
     border-radius: 10px;
@@ -97,7 +100,7 @@ body{
 *::-webkit-scrollbar {
     width: 2px;
     height: 8px;
-    position:absolute;
+    
   }
   
   /* Track */
