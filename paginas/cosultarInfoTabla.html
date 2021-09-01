@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Veolia Home</title>
+    <link rel="stylesheet" href="../css/consultarInfoTabla.css">
+    <link rel="stylesheet" href="../css/navegacion.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--<link rel="shortcut icon" type="image/x-icon" href="imagenes\favicon.ico">-->
+    <!-- <link rel="shortcut icon" href="http://www.wikipedia.org/favicon.ico" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+  </head>
+  <body>
+    <!-- -------------    Menu Navegación para todas las páginas -----------   -->
+    <div class="menu_lateral" id="menu_lateral">
+      <div class="contenedorBotonCerrar">
+        <p class="botonCerrar"><i class="fa fa-close" id="botonCerrar"></i></p>
+      </div>
+      <div class="contenedorInformacionUsuario">
+        <p class="tituloMenu">Menú de Opciones</p>
+        <p class="tituloUsuario">Usuario: Jaimito</p>
+        <i class="fa fa-user-circle-o"></i>
+      </div>
+      <div class="menuOpciones">
+        <ul>
+          <li>
+            <a href="">
+              <div class="Icono"><i class="fa fa-window-restore"></i></div>
+              <div class="Texto">Consultar Tablas de Datos</div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="Icono"><i class="fa fa-vcard"></i></div>
+              <div class="Texto">Información de Entidades</div></a
+            >
+          </li>
+          <li>
+            <a href="">
+              <div class="Icono"><i class="fa fa-power-off"></i></div>
+              <div class="Texto">Cerrar Sesión</div></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="barraSuperior">
+      <div class="btn_menu" id="botonAbrir">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="contenedorLogo">
+        <img class="logo" src="../assets/veolialogo1.png" alt="Imagen veolia" />
+      </div>
+    </div>
+    <!-- -------------------   FIN menu navegacion------------------------------ -->
+    <div class="tituloPagina">
+      <h2>Filtros de búsqueda</h2>
+    </div>
+
+    <form class="fechas">  
+        <h3>Fecha Inicial</h3>
+        <input type="date" class="inputfechai" >
+        <h3>Fecha Final</h3>
+        <input type="date" class="inputfechaf" >
+        <h3>Empresa</h3>
+        <select name="" class="selectempresas">
+        </select>
+        <button class="botonFiltrar" type="submit">Filtrar Información</button>
+    </form>
+    <h1 class="tituloTabla">Ordenes de entrada</h1>
+    <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>MATERIALES_DESCRIPCIÓN</th>
+                        <th>CATEGORIA</th>
+                        <th>PyG</th>
+                        <th>CANT_ENTRADA_TOTAL</th>
+                        <th>UNIDAD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ACEITES USADOS</td>
+                        <td>OTROS</td>
+                        <td>ACEITES</td>
+                        <td>31.36</td>
+                        <td>TINAS</td>
+                    </tr>
+                    <tr>
+                        <td>ALUMINIO</td>
+                        <td>METALES</td>
+                        <td>METALES NO FERROSOS</td>
+                        <td>5.O</td>
+                        <td>KG</td>
+                    </tr>
+                    <tr>
+                        <td>ALUMINIO CLAUSEN</td>
+                        <td>METALES</td>
+                        <td>METALES NO FERROSOS</td>
+                        <td>26.7</td>
+                        <td>KG</td>
+                    </tr>
+                    <tr>
+                        <td>ARCHIVO</td>
+                        <td>PAPEL</td>
+                        <td>PAPELES</td>
+                        <td>129</td>
+                        <td>KG</td>
+                    </tr>
+                </tbody>
+              </table>
+
+        
+
+    </div>
+
+  </body>
+  <script src="../js/navegacion.js" charset="utf-8"></script>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Veolia Home</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <title>ENTIDADES ASOCIADAS</title>
+    <link rel="stylesheet" href="../css/EntidadesAso.css">
     <link rel="stylesheet" href="../css/navegacion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
-    
-    <div class="contenedorPrincipal">  
-        
+   
+
         <!-- -------------    Menu Navegación para todas las páginas -----------   -->
         <div class="menu_lateral" id="menu_lateral">
             <div class="contenedorBotonCerrar">
@@ -30,7 +29,7 @@
             </div>
             <div class="menuOpciones">
                 <ul>
-                    <li> <a href="consultarTablas.html"> <div class="Icono"><i class="fa fa-window-restore"></i></div> <div class="Texto">Consultar Tablas de Datos</div> </a> </li>
+                    <li> <a href=""> <div class="Icono"><i class="fa fa-window-restore"></i></div> <div class="Texto">Consultar Tablas de Datos</div> </a> </li>
                     <li> <a href=""> <div class="Icono"><i class="fa fa-vcard"></i></div> <div class="Texto">Información de Entidades</div></a> </li>
                     <li> <a href=""> <div class="Icono"><i class="fa fa-power-off"></i></div> <div class="Texto">Cerrar Sesión</div></a> </li>
                 </ul>
@@ -50,23 +49,42 @@
         </div>
         <!-- -------------------   FIN menu navegacion------------------------------ -->
 
-         <div class="contenedorSecciones">  
-            <a href="consultarTablas.html">
-                <div class="seccionesInternas">
-                    <img class="img1" alt="Consultar tablas" src="../assets/imagen2.png"> 
-                    <h4>Consultar tablas de datos</h4>
-                </div>
-                
+        <div  class="tituloPagina"> 
+            <h2>Entidades asociadas</h2>    
+        </div>
+        <div class="subtituloPagina">
+            <h3>Seleccione una entidad o persona asociada</h3>
+        </div>
+        </div>
+         <div class="contenedorConsultTablas">  
+
+           
+
+            <?php
+                $conexion=msqli_connect('localhost','user', 'password','veolia');
+            ?>
+            <?php
+                $sql="SELECT * from entidades";
+                $result=mysqli_query($conexion,$sql);
+                $mostrar=mysqli_fetch_array($result);
+            ?>
+
+            <a class="opciones" href="">
+                <h1>entidad 1 : <?php echo $mostrar['entidad'] ?></h1>                
             </a>
-            <a href="">
-                <div class="seccionesInternas">
-                    <img class="img1" alt="Informacion de entidades" src="../assets/imagen1.png"> 
-                    <h4>Información de entidades</h4>
-                </div>
-            </a> 
-        </div>            
+
+            <a class="opciones" href="">
+                <h1>entidad 2: <?php echo $mostrar['entidad'] ?> </h1>
+            </a>
+
+            <a class ="opciones ">
+                <h1> entidad 3: <?php echo $mostrar['entidad'] ?> </h1>
+            </a>
+
+         <?php ?>   
+        </div>           
     </div>
-    
+   
 
 </body>
 <script src="../js/navegacion.js" charset="utf-8"></script>
