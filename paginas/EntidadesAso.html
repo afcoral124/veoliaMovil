@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>ENTIDADES ASOCIADAS</title>
+    <title>Entidades Asociadas</title>
     <link rel="stylesheet" href="../css/EntidadesAso.css">
     <link rel="stylesheet" href="../css/navegacion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +29,7 @@
             </div>
             <div class="menuOpciones">
                 <ul>
+                    <li> <a href="home.html"> <div class="Icono home"><i class="fa fa-home"></i></div> <div class="Texto">Inicio</div> </a> </li>
                     <li> <a href=""> <div class="Icono"><i class="fa fa-window-restore"></i></div> <div class="Texto">Consultar Tablas de Datos</div> </a> </li>
                     <li> <a href=""> <div class="Icono"><i class="fa fa-vcard"></i></div> <div class="Texto">Información de Entidades</div></a> </li>
                     <li> <a href=""> <div class="Icono"><i class="fa fa-power-off"></i></div> <div class="Texto">Cerrar Sesión</div></a> </li>
@@ -48,18 +49,21 @@
             
         </div>
         <!-- -------------------   FIN menu navegacion------------------------------ -->
-
+    <div class="contenedorPrincipal">
         <div  class="tituloPagina"> 
             <h2>Entidades asociadas</h2>    
         </div>
+        <div class="buscar">
+            <input type="search" class="inputbuscar" placeholder="🔎 Buscar entidad">
+        </div>
+
         <div class="subtituloPagina">
             <h3>Seleccione una entidad o persona asociada</h3>
         </div>
-        </div>
-         <div class="contenedorConsultTablas">  
+         <div class="contenedorOpciones">  
 
            
-
+            <!--     
             <?php
                 $conexion=msqli_connect('localhost','user', 'password','veolia');
             ?>
@@ -68,20 +72,34 @@
                 $result=mysqli_query($conexion,$sql);
                 $mostrar=mysqli_fetch_array($result);
             ?>
+            -->
+            <a class="opciones" href="">
+                <h3>Centro Comercial Llano Grande <!--<?php echo $mostrar['entidad'] ?>--> </h3>                
+            </a>
 
             <a class="opciones" href="">
-                <h1>entidad 1 : <?php echo $mostrar['entidad'] ?></h1>                
+                <h3>Conjunto Residencial Campos verdes <!-- <?php echo $mostrar['entidad'] ?> --> </h3>
             </a>
 
-            <a class="opciones" href="">
-                <h1>entidad 2: <?php echo $mostrar['entidad'] ?> </h1>
+            <a class ="opciones" href="">
+                <h3>Jhon Vásquez <!--<?php echo $mostrar['entidad'] ?>--> </h3>
             </a>
-
-            <a class ="opciones ">
-                <h1> entidad 3: <?php echo $mostrar['entidad'] ?> </h1>
+            <a class ="opciones" href="">
+                <h3>Conjunto Altos de la Flora <!--<?php echo $mostrar['entidad'] ?>--> </h3>
             </a>
-
-         <?php ?>   
+            <a class ="opciones" href="">
+                <h3>Fernando Perez <!--<?php echo $mostrar['entidad'] ?>--> </h3>
+            </a>
+            <a class ="opciones" href="">
+                <h3>Olimpica Centro <!--<?php echo $mostrar['entidad'] ?>--> </h3>
+            </a>
+            <a class ="opciones" href="">
+                <h3>Hector Tacué <!--<?php echo $mostrar['entidad'] ?>--> </h3>
+            </a>
+            <a class ="opciones" href="">
+                <h3>Rosmari Jimenez <!--<?php echo $mostrar['entidad'] ?>--> </h3>
+            </a>
+         <!--<?php ?>  --> 
         </div>           
     </div>
    
