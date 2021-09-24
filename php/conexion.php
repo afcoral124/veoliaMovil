@@ -2,5 +2,5 @@
 $host = "localhost";
 $user = "root";
 $pw = "";
-$db = "proyecto";
+$db = "veolia";
 ?>

@@ -1,4 +1,10 @@
 const formulario = document.getElementById("login");
+const alerta = document.getElementById("alerta");
+const user = document.getElementById("user");
+const password = document.getElementById("password");
+
+user.addEventListener("click", quitarAlerta);
+password.addEventListener("click", quitarAlerta);
 
 formulario.addEventListener('submit',function(e){
     e.preventDefault();
@@ -15,7 +21,21 @@ formulario.addEventListener('submit',function(e){
 
     .then( res => res.json())
     .then(data => {
-        console.log(data)
+        
+        if (data==='login correcto'){
+            console.log("HOLA, SE ENTRÓ AL IF CORRECTO")
+            window.location.href="paginas/home.html";
+        }
+        else{
+            console.log("CHAO, SE ENTRÓ AL ELSE");
+            alerta.classList.add("active");
+        }
     })
 
 })
+
+function quitarAlerta(){
+    console.log("SE ESTÁ QUITANDO LA ALERTA...");
+    alerta.classList.remove("active");
+}
+

@@ -87,4 +87,15 @@ h1{
     color:white;
 }
 
+.alerta{
+    display: none;
+    background-color: rgb(240, 129, 129);
+    color: black;
+    font-size: 13px;
+    margin: 10px 0px;
+    width: 100%;
+}
 
+.alerta.active{
+    display:block;
+}
