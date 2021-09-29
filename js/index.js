@@ -14,6 +14,7 @@ formulario.addEventListener('submit',function(e){
     console.log(datos.get("user"));
     console.log(datos.get('password'))
     
+    //Comunicación con el servidor----------------------------------------------------------------
     fetch('../php/login.php',{
         method: 'POST',
         body: datos
@@ -31,6 +32,8 @@ formulario.addEventListener('submit',function(e){
             alerta.classList.add("active");
         }
     })
+    //Finaliza comunicación con el servidor---------------------------------------------------------
+
 
 })
 
