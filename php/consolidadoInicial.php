@@ -5,21 +5,13 @@ include ("conexion.php");
 $mysqli = new mysqli($host, $user, $pw, $db);
 
 //Sentencia
-$sql = "CALL FILTRAR_CONSOLIDADO_SOLO_FECHA_ENTRADA(1901/01/01 , 2300/31/12)";
+$sql = "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE FECHA_PESAJE>= '1950-01-01' AND FECHA_PESAJE<= '3000-01-01' GROUP BY materiales_descripcion";
 
 //Comunicación con la BD
-//$result1 = $mysqli->query($sql);
-
-$fechaini = "1901/01/01";
-$fechafin = "2300/31/12";
-$stmt = $db ->prepare("CALL CALL FILTRAR_CONSOLIDADO_SOLO_FECHA_ENTRADA(?, ?);");
-$stmt->bind_param("ss", $fechaini, $fechafin);
-$stmt->execute();
-
-
-
+$result1 = $mysqli->query($sql);
 $numero_filas = $result1->num_rows;
-if ($numero_filas>0){
+
+if ($numero_filas>0){ //Que si hubo resultado con varios datos
     //La línea siguiente suele hacerse con un while si se sabe que se va a arrojar varios resultados (es decir varias filas de la tabla)
     $respuesta= [];
     $k=0;
@@ -34,7 +26,7 @@ if ($numero_filas>0){
         $respuesta[$k+4] = $filaActual[4]; //UNIDAD
         
         //Se suma de 5 en 5 para que en cada iteración se guarden 5 datos
-        $k=$k+5; // 0+5  | 5+5  | 10+5
+        $k=$k+5; 
     }
 
     //Respuesta al cliente
@@ -43,8 +35,5 @@ if ($numero_filas>0){
 else{
     echo json_encode("Error al conseguir los datos");
 }
-
-$stmt->close();
-$db->close();
 
 ?>

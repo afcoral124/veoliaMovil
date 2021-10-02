@@ -15,7 +15,7 @@ formulario.addEventListener('submit',function(e){
     console.log(datos.get('password'))
     
     //Comunicación con el servidor----------------------------------------------------------------
-    fetch('../php/login.php',{
+    fetch('php/login.php',{
         method: 'POST',
         body: datos
     })
@@ -33,8 +33,6 @@ formulario.addEventListener('submit',function(e){
         }
     })
     //Finaliza comunicación con el servidor---------------------------------------------------------
-
-
 })
 
 function quitarAlerta(){

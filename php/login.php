@@ -5,9 +5,6 @@ $password = $_POST["password"];
 session_start();
 
 
-
-
-
 //Incluimos los datos de conexion
 include ("conexion.php");
 $mysqli = new mysqli($host, $user, $pw, $db);

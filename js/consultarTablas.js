@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then( res => res.json())
     .then(data => {
             console.log(data); //data es la respuesta del servidor
-            arregloTablas = data; //De objeto a cadena(JSON)
+            arregloTablas = data; 
             imprimirListaTablas();
     })
 
