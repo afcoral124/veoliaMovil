@@ -58,59 +58,31 @@
         <h2>Filtros de búsqueda</h2>
         </div>
 
-        <form class="fechas">  
+        <form class="fechas" id="formulario">  
             <h3>Fecha Inicial</h3>
-            <input type="date" class="inputfechai" >
+            <input type="date" class="inputfechai" name="fechainicial" >
             <h3>Fecha Final</h3>
-            <input type="date" class="inputfechaf" >
+            <input type="date" class="inputfechaf" name="fechafinal">
             <h3>Empresa</h3>
-            <select name="" class="selectempresas">
+            <select class="selectempresas" name="listaEmpresas" id="listaEmpresas" >
             </select>
             <button class="botonFiltrar" type="submit">Filtrar Información</button>
         </form>
-        <h1 class="tituloTabla">Ordenes de entrada</h1>
+        <h1 class="tituloTabla">Ordenes de salida</h1>
         <div class="tabla">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>MATERIALES_DESCRIPCIÓN</th>
-                            <th>CATEGORIA</th>
-                            <th>PyG</th>
-                            <th>CANT_ENTRADA_TOTAL</th>
-                            <th>UNIDAD</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ACEITES USADOS</td>
-                            <td>OTROS</td>
-                            <td>ACEITES</td>
-                            <td>31.36</td>
-                            <td>TINAS</td>
-                        </tr>
-                        <tr>
-                            <td>ALUMINIO</td>
-                            <td>METALES</td>
-                            <td>METALES NO FERROSOS</td>
-                            <td>5.O</td>
-                            <td>KG</td>
-                        </tr>
-                        <tr>
-                            <td>ALUMINIO CLAUSEN</td>
-                            <td>METALES</td>
-                            <td>METALES NO FERROSOS</td>
-                            <td>26.7</td>
-                            <td>KG</td>
-                        </tr>
-                        <tr>
-                            <td>ARCHIVO</td>
-                            <td>PAPEL</td>
-                            <td>PAPELES</td>
-                            <td>129</td>
-                            <td>KG</td>
-                        </tr>
-                    </tbody>
-                </table>
+          <table>
+            <thead>
+                <tr>
+                    <th>MATERIALES_DESCRIPCIÓN</th>
+                    <th>CATEGORIA</th>
+                    <th>PyG</th>
+                    <th>CANT_ENTRADA_TOTAL</th>
+                    <th>UNIDAD</th>
+                </tr>
+            </thead>
+            <tbody id="campoDatosSalida">
+            </tbody>
+        </table>
         </div>
     </div>
   </body>

@@ -5,7 +5,7 @@ include ("conexion.php");
 $mysqli = new mysqli($host, $user, $pw, $db);
 
 //Sentencia
-$sql = "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE FECHA_PESAJE>= '1950-01-01' AND FECHA_PESAJE<= '3000-01-01' GROUP BY materiales_descripcion";
+$sql = "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE FECHA_PESAJE>= '1950/01/01' AND FECHA_PESAJE<= '3000/01/01' GROUP BY materiales_descripcion";
 
 //Comunicación con la BD
 $result1 = $mysqli->query($sql);

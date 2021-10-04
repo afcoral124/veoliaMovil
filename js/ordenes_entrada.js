@@ -7,32 +7,27 @@ const formulario = document.getElementById("formulario");
 document.addEventListener('DOMContentLoaded', function () {
     let datos = 0;
     //Comunicación con el servidor----------------------------------------------------------------
-    fetch('../php/consolidadoInicial.php',{
+    fetch('../php/consolidadoInicialEntrada.php',{
         method: 'POST',
         body: datos
     })
     .then(res => res.json())
     .then(data => {
             let respuesta1 = data;//data es la respuesta del servidor
-            console.log("Respuesta1:");
-            console.log(respuesta1);
-            
-            imprimirDatosIniciales(respuesta1);
+            imprimirDatos(respuesta1);
     })
     
     //Comunicación con el servidor----------------------------------------------------------------
 
     
     //Comunicación con el servidor----------------------------------------------------------------
-    fetch('../php/listarEmpresas.php',{
+    fetch('../php/empresasFiltradoEntrada.php',{
         method: 'POST',
         body: datos
     })
     .then(res => res.json())
     .then(data => {
             let respuesta2 = data; //data es la respuesta del servidor
-            console.log("Respuesta2:");
-            console.log(respuesta2);
             listarEmpresas(respuesta2);
     })
     //Comunicación con el servidor----------------------------------------------------------------
@@ -44,19 +39,21 @@ formulario.addEventListener('submit',function(e){
     console.log("me diste");
 
     var datos = new FormData(formulario);
-    console.log(datos.get("fechainicial"));
-    console.log(datos.get("fechafinal"));
-    console.log(datos.get("listaEmpresas"));
-    
     //Comunicación con el servidor----------------------------------------------------------------
-    fetch('../php/filtroConsolidado.php',{
+    fetch('../php/filtroConsolidadoEntrada.php',{
         method: 'POST',
         body: datos
     })
 
     .then( res => res.json())
     .then(data => {
-        console.log(data);
+        let respuesta3 = data;
+        if(respuesta3=="Error al conseguir los datos"){
+            imprimirVacio();
+        }
+        else{
+            imprimirDatos(respuesta3);
+        }
     })
     //Finaliza comunicación con el servidor---------------------------------------------------------
 
@@ -64,22 +61,32 @@ formulario.addEventListener('submit',function(e){
 })
 
 
-
-function imprimirDatosIniciales(respuesta1){
+function imprimirVacio(){
     campoDatos.innerHTML=" ";
-    console.log(respuesta1.length);
-    let numeroFilas = respuesta1.length/5;
+    campoDatos.innerHTML+=
+    `
+    <tr>
+        <td colspan="5">No hay datos con esos filtros</td>
+    </tr>
+    `;
+}
+
+
+function imprimirDatos(respuesta){
+    campoDatos.innerHTML=" ";
+    console.log(respuesta.length);
+    let numeroFilas = respuesta.length/5;
     let contador=0;
     
     for (var i=0; i<numeroFilas; i++){
         campoDatos.innerHTML+=
         `
         <tr>
-            <td>${respuesta1[contador]}</td>
-            <td>${respuesta1[contador+1]}</td>
-            <td>${respuesta1[contador+2]}</td>
-            <td>${respuesta1[contador+3]}</td>
-            <td>${respuesta1[contador+4]}</td>
+            <td>${respuesta[contador]}</td>
+            <td>${respuesta[contador+1]}</td>
+            <td>${respuesta[contador+2]}</td>
+            <td>${respuesta[contador+3]}</td>
+            <td>${respuesta[contador+4]}</td>
         </tr>
         `;
         contador+=5;

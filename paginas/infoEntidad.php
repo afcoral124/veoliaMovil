@@ -74,33 +74,64 @@
     </div>
     <!-- -------------------   FIN menu navegacion------------------------------ -->
 
+
+
     <div class="contenedorPrincipal">
       <div class="tituloPagina">
         <h2 class="titulo1">Datos de:</h2>
-        <h2 class="titulo2">Centro Comercial Llano Grande</h2>
+        <h2 class="titulo2"><?php echo $_GET['nombreEmpresa'] ?></h2>
       </div>
+
+      <?php
+
+      //Conexión
+      include ("../php/conexion.php");
+      $mysqli = new mysqli($host, $user, $pw, $db);
+      $nombre = $_GET['nombreEmpresa'];
+      $nombre=strval($nombre) ;
+      
+      //Sentencia
+      $sql = "SELECT DIRECCION, TELEFONO, MUNICIPIO, DEPARTAMENTO, NIT FROM empresas WHERE NOMBRE ='$nombre' ";
+
+
+      
+
+      //Comunicación con la BD
+      $result1 = $mysqli->query($sql);
+      
+      
+      $numero_filas = $result1->num_rows;
+    
+      $filaActual = $result1->fetch_array(MYSQLI_NUM);
+      ?>
+
+      
 
       <div class="contenedorInformacion">
         <div class="contenedorDato">
           <h3 class="tituloDato">Nombre:</h3>
-          <h3 class="dato">Centro Comercial Llano Grande</h3>
+          <h3 class="dato"> <?php echo $_GET['nombreEmpresa']?> </h3>
         </div>
         <div class="contenedorDato">
             <h3 class="tituloDato">Dirección:</h3>
-            <h3 class="dato">Cr 4 #10-76</h3>
+            <h3 class="dato"><?php echo $filaActual[0]?> </h3>
         </div>
         <div class="contenedorDato">
             <h3 class="tituloDato">Telefono:</h3>
-            <h3 class="dato">316326603</h3>
+            <h3 class="dato"><?php echo $filaActual[1]?> </h3>
         </div>
         <div class="contenedorDato">
             <h3 class="tituloDato">Departamento:</h3>
-            <h3 class="dato">Valle del Cauca</h3>
+            <h3 class="dato"><?php echo $filaActual[3]?> </h3>
         </div>
         <div class="contenedorDato">
             <h3 class="tituloDato">Municipio:</h3>
-            <h3 class="dato">Palmira</h3>
-        </div>        
+            <h3 class="dato"><?php echo $filaActual[2]?></h3>
+        </div>
+        <div class="contenedorDato">
+            <h3 class="tituloDato">NIT:</h3>
+            <h3 class="dato"><?php echo $filaActual[4]?></h3>
+        </div>          
 
         <div class="contenedorIconoEntidad">
             <i class="fa fa-building"></i>

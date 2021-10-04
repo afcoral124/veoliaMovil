@@ -5,15 +5,17 @@ include ("conexion.php");
 $mysqli = new mysqli($host, $user, $pw, $db);
 
 //Datos recibidos desde el cliente
-$fechaInicial = $_POST["fechainicial"];
-$fechaFinal = $_POST["fechafinal"];
+$fechaInicial = str_replace("-", "/",$_POST["fechainicial"]);
+$fechaFinal = str_replace("-", "/",$_POST["fechafinal"]);
 $empresa = $_POST["listaEmpresas"];
 //datos por default para los casos en los que el cliente no seleccione fechas
-$fechaFinalDefault="3000-01-01";
-$fechaInicialDefault="1950-01-01";
+$fechaFinalDefault="3000/01/01";
+$fechaInicialDefault="1950/01/01";
 //procedimientos sql 
 // 1 --  $sql = "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE FECHA_PESAJE>= '$fechainicial' AND FECHA_PESAJE<= '$fechaFinalDefault' GROUP BY materiales_descripcion";
 // 2 --  $sql= "SELECT ORIGEN, CLIENTE_PROVEEDOR, MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= NOMBRE_EMPRESA AND FECHA_PESAJE>= FECHA_INI AND FECHA_PESAJE<= FECHA_FIN GROUP BY materiales_descripcion";
+// 3 -- 
+
 
 //========================================CASOS===============================================
 $sql="Inicializando";
@@ -22,21 +24,21 @@ if (($fechaInicial!="")&&($fechaFinal=="")&&($empresa=="----")){
 
     $sql = "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE FECHA_PESAJE>= '$fechaInicial' AND FECHA_PESAJE<= '$fechaFinalDefault' GROUP BY materiales_descripcion";
 }
-//Cliente seleccionó: solo fecha inicial 
-if (($fechaInicial=="")&&($fechaFinal!=="")&&($empresa=="----")){
+//Cliente seleccionó: solo fecha final
+if (($fechaInicial=="")&&($fechaFinal!="")&&($empresa=="----")){
     
     $sql = "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE FECHA_PESAJE>= '$fechaInicialDefault' AND FECHA_PESAJE<= '$fechaFinal' GROUP BY materiales_descripcion";
    
 }
 //Cliente seleccionó: Solo empresa 
-if (($fechaInicial=="")&&($fechaFinal=="")&&($empresa!=="----")){
+if (($fechaInicial=="")&&($fechaFinal=="")&&($empresa!="----")){
     
-    $sql= "SELECT ORIGEN, CLIENTE_PROVEEDOR, MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicialDefault' AND FECHA_PESAJE<= '$fechaFinalDefault' GROUP BY materiales_descripcion";
+    $sql= "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicialDefault' AND FECHA_PESAJE<= '$fechaFinalDefault' GROUP BY materiales_descripcion";
    
 }
 //Cliente seleccionó: Todas las 3 opciones
 if (($fechaInicial!="")&&($fechaFinal!="")&&($empresa!="----")){
-    $sql= "SELECT ORIGEN, CLIENTE_PROVEEDOR, MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicial' AND FECHA_PESAJE<= '$fechaFinal' GROUP BY materiales_descripcion";
+    $sql= "SELECT MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicial' AND FECHA_PESAJE<= '$fechaFinal' GROUP BY materiales_descripcion";
     
 }
 //Cliente seleccionó: fecha inicial y fecha final 
@@ -45,11 +47,11 @@ if (($fechaInicial!="")&&($fechaFinal!="")&&($empresa=="----")){
 }
 //Cliente seleccionó:fecha inicial y empresa 
 if (($fechaInicial!="")&&($fechaFinal=="")&&($empresa!="----")){
-    $sql= "SELECT ORIGEN, CLIENTE_PROVEEDOR, MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicial' AND FECHA_PESAJE<= '$fechaFinalDefault' GROUP BY materiales_descripcion";
+    $sql= "SELECT  MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaIniciIPCal' AND FECHA_PESAJE<= '$fechaFinalDefault' GROUP BY materiales_descripcion";
 }
 //Cliente seleccionó: Fecha final y Empresa
 if (($fechaInicial=="")&&($fechaFinal!="")&&($empresa!="----")){
-    $sql= "SELECT ORIGEN, CLIENTE_PROVEEDOR, MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicialDefault' AND FECHA_PESAJE<= '$fechaFinal' GROUP BY materiales_descripcion";
+    $sql= "SELECT  MATERIALES_DESCRIPCION, CATEGORIA, PyG, SUM(CANT_ENTRADA)as CANT_ENTRADA_TOTAL, UNIDAD FROM ordenes_entrada WHERE CLIENTE_PROVEEDOR= '$empresa' AND FECHA_PESAJE>= '$fechaInicialDefault' AND FECHA_PESAJE<= '$fechaFinal' GROUP BY materiales_descripcion";
 }
 //Cliente seleccionó: Ninguno de los 3
 if (($fechaInicial=="")&&($fechaFinal=="")&&($empresa=="----")){
