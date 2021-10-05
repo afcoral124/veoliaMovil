@@ -13,11 +13,11 @@
     <!--<link rel="shortcut icon" type="image/x-icon" href="imagenes\favicon.ico">-->
     <!-- <link rel="shortcut icon" href="http://www.wikipedia.org/favicon.ico" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="../js/verificarRol.js" charset="utf-8"></script>
 </head>
+
 <body>
-    
     <div class="contenedorPrincipal">  
-        
         <!-- -------------    Menu Navegación para todas las páginas -----------   -->
         <div class="menu_lateral" id="menu_lateral">
             <div class="contenedorBotonCerrar">
@@ -32,8 +32,8 @@
                 <ul>
                     <li> <a href="home.html"> <div class="Icono home"><i class="fa fa-home"></i></div> <div class="Texto">Inicio</div> </a> </li>
                     <li> <a href="consultarTablas.html"> <div class="Icono"><i class="fa fa-window-restore"></i></div> <div class="Texto">Consultar Tablas de Datos</div> </a> </li>
-                    <li> <a href=""> <div class="Icono"><i class="fa fa-vcard"></i></div> <div class="Texto">Información de Entidades</div></a> </li>
-                    <li> <a href=""> <div class="Icono"><i class="fa fa-power-off"></i></div> <div class="Texto">Cerrar Sesión</div></a> </li>
+                    <li> <a href="EntidadesAso.html"> <div class="Icono"><i class="fa fa-vcard"></i></div> <div class="Texto">Información de Entidades</div></a> </li>
+                    <li> <a href="../index.html"> <div class="Icono"><i class="fa fa-power-off"></i></div> <div class="Texto">Cerrar Sesión</div></a> </li>
                 </ul>
             </div>
             
@@ -58,13 +58,16 @@
                     <h4>Consultar tablas de datos</h4>
                 </div>
                 
-            </a>
+            </a>    
+        <!-- <?php if($_SESSION['']=="Administrador"): ?> -->
             <a href="EntidadesAso.html">
                 <div class="seccionesInternas">
                     <img class="img1" alt="Informacion de entidades" src="../assets/imagen1.png"> 
                     <h4>Información de entidades</h4>
                 </div>
             </a> 
+
+            <!-- <?php endif; ?> -->
         </div>            
     </div>
     

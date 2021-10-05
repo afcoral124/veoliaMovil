@@ -35,33 +35,13 @@
         <i class="fa fa-user-circle-o"></i>
       </div>
       <div class="menuOpciones">
-        <ul>
-          <li>
-            <a href="home.html">
-              <div class="Icono home"><i class="fa fa-home"></i></div>
-              <div class="Texto">Inicio</div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="Icono"><i class="fa fa-window-restore"></i></div>
-              <div class="Texto">Consultar Tablas de Datos</div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="Icono"><i class="fa fa-vcard"></i></div>
-              <div class="Texto">Información de Entidades</div></a
-            >
-          </li>
-          <li>
-            <a href="">
-              <div class="Icono"><i class="fa fa-power-off"></i></div>
-              <div class="Texto">Cerrar Sesión</div></a
-            >
-          </li>
-        </ul>
-      </div>
+                <ul>
+                    <li> <a href="home.html"> <div class="Icono home"><i class="fa fa-home"></i></div> <div class="Texto">Inicio</div> </a> </li>
+                    <li> <a href="consultarTablas.html"> <div class="Icono"><i class="fa fa-window-restore"></i></div> <div class="Texto">Consultar Tablas de Datos</div> </a> </li>
+                    <li> <a href="EntidadesAso.html"> <div class="Icono"><i class="fa fa-vcard"></i></div> <div class="Texto">Información de Entidades</div></a> </li>
+                    <li> <a href="../index.html"> <div class="Icono"><i class="fa fa-power-off"></i></div> <div class="Texto">Cerrar Sesión</div></a> </li>
+                </ul>
+            </div>
     </div>
 
     <div class="barraSuperior">
@@ -142,4 +122,5 @@
     </div>
   </body>
   <script src="../js/navegacion.js" charset="utf-8"></script>
+  <script src="../js/verificarRol.js" charset="utf-8"></script>
 </html>
