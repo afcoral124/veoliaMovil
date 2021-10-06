@@ -4,12 +4,6 @@ $usuario = $_POST["user"];
 $password = $_POST["password"];
 
 
-if (isset($_SESSION["autenticado"])) {
-    session_start();
-    session_unset();
-    session_destroy();
-}
-
 session_start();
 //Incluimos los datos de conexion
 include ("conexion.php");

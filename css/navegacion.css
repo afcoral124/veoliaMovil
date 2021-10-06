@@ -144,3 +144,15 @@
 .menuOpciones .home{
     font-size: 27px;
 }
+
+
+li.ocultar{
+    display: none;
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
+
+
+
+

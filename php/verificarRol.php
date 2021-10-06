@@ -1,18 +1,19 @@
 <?php
 session_start();
 
+$respuesta=[];
 if(isset($_SESSION["autenticado"])){
 
-    if($_SESSION["autenticado"]=="SIx3"){
-        echo json_encode($_SESSION["rol"]);
-    }
-    else{
-        echo json_encode("No logueado");
-    }
+    $respuesta[0] = strval($_SESSION["rol"]);
+    $respuesta[1] = strval($_SESSION["usuario"]);
 
+    echo json_encode($respuesta);
+  
 }
 else {
-    echo json_encode("No logueado");
+    $respuesta[0]="No logueado";
+    $respuesta[1]="No logueado";
+    echo json_encode($respuesta);
 }
 
 
