@@ -1,5 +1,5 @@
 # Aplicación Móvil Veolia: Gestor de inventario
-Veolia es una empresa internacional dedicada a la gestión de basuras y material reciclable de todo tipo. Durante la universidad se planteó un proyecto de desarrollo web, de diseño Mobile-Only de algunas funciones especificadas por un cliente para el laboratorio IV de ingeniería Electrónica en la Universidad del Cauca. 
+Veolia es una empresa internacional dedicada a la gestión de basuras y material reciclable de todo tipo. Durante la universidad se planteó un proyecto de desarrollo web (HTML+JavaScript+CSS), de diseño Mobile-Only de algunas funciones especificadas por un cliente para el laboratorio IV de ingeniería Electrónica en la Universidad del Cauca. 
 
 La aplicación se conecta a la base de datos usando PHP, en donde se puede consultar el inventario para que los usuarios y empleados de la empresa conozcan el inventario, reportes y clasificación de todo el material que tienen en bodega.
 Se puede consultar:
